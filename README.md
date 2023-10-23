@@ -33,10 +33,10 @@ involves the following entities and their relationships:
 
 ## Task #2 - Write Migrations to Create and Populate the Database
 1. Write two migrations:
-    - The first migration (named V1__create_db.sql) should create the database structure, including all tables and
+    - The first migration (named V1__create_clients_table.sql) should create the database structure, including all tables and
       relationships. Ensure proper constraints.
 
-    - The second migration (named V2__populate_db.sql) should populate the database with data, including at least:
+    - The second migration (named V10__populate_db.sql) should populate the database with data, including at least:
         - 10 clients
         - 5 planets
         - 10 tickets
