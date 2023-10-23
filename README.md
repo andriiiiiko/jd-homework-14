@@ -26,7 +26,7 @@ involves the following entities and their relationships:
 ## Task #1 - Set Up the Project with Hibernate
 1. Create a new Gradle project.
 2. Connect the following libraries:
-    - H2
+    - MySQL
     - Hibernate
     - Flyway
 3. Ensure that your project runs without errors.
