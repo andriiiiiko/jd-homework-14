@@ -12,6 +12,14 @@
         <File name="FlywayMigrationFile" fileName="logs/flyway-migration.log">
             <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
         </File>
+
+        <File name="ClientEntityFile" fileName="logs/client-entity.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
+
+        <File name="PlanetEntityFile" fileName="logs/planet-entity.log">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </File>
     </Appenders>
 
     <Loggers>
@@ -23,7 +31,15 @@
             <AppenderRef ref="FlywayMigrationFile"/>
         </Logger>
 
-        <Root level="info">
+        <Logger name="com.andriiiiiko.database.entities.Client" level="info">
+            <AppenderRef ref="ClientEntityFile"/>
+        </Logger>
+
+        <Logger name="com.andriiiiiko.database.entities.Planet" level="info">
+            <AppenderRef ref="PlanetEntityFile"/>
+        </Logger>
+
+        <Root level="error">
             <AppenderRef ref="Console"/>
         </Root>
     </Loggers>

@@ -8,18 +8,18 @@ public class Config {
     /**
      * The JDBC URL for the database connection.
      */
-    public static final String JDBC_URL = "jdbc:mysql://d3y0lbg7abxmbuoi.chr7pe7iynqr.eu-west-1.rds.amazonaws.com" +
-            ":3306/hkvss7c5fg8auku2";
+    public static final String JDBC_URL = "jdbc:mysql://52.59.26.171" +
+            ":3306/jd-homework-13";
 
     /**
      * The username for the database connection.
      */
-    public static final String USERNAME = "gos0krg58zh6yehw";
+    public static final String USERNAME = "root";
 
     /**
      * The password for the database connection.
      */
-    public static final String PASSWORD = "dy4s261mxmvybzxe";
+    public static final String PASSWORD = "password";
 
     /**
      * Default constructor. Private to prevent instantiation of this utility class.

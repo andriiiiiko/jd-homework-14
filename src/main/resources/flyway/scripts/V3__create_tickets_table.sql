@@ -5,7 +5,7 @@ CREATE TABLE tickets
     client_id      INT,
     from_planet_id VARCHAR(255),
     to_planet_id   VARCHAR(255),
-    FOREIGN KEY (client_id) REFERENCES clients (id),
-    FOREIGN KEY (from_planet_id) REFERENCES planets (id),
-    FOREIGN KEY (to_planet_id) REFERENCES planets (id)
+    FOREIGN KEY (client_id) REFERENCES clients (id) ON DELETE CASCADE,
+    FOREIGN KEY (from_planet_id) REFERENCES planets (id) ON DELETE CASCADE,
+    FOREIGN KEY (to_planet_id) REFERENCES planets (id) ON DELETE CASCADE
 );
