@@ -1,9 +1,11 @@
 package com.andriiiiiko;
 
+import com.andriiiiiko.database.entities.Ticket;
 import com.andriiiiiko.database.repositories.ClientCrud;
 import com.andriiiiiko.database.repositories.PlanetCrud;
 import com.andriiiiiko.database.entities.Client;
 import com.andriiiiiko.database.entities.Planet;
+import com.andriiiiiko.database.repositories.TicketCrud;
 import com.andriiiiiko.database.utils.FlywayMigration;
 import com.andriiiiiko.database.utils.HibernateUtil;
 import org.apache.logging.log4j.LogManager;
@@ -34,7 +36,6 @@ public class App {
         clientCrud.remove(client);
 
 
-
         PlanetCrud planetCrud = new PlanetCrud();
 
         Planet newPlanet = new Planet();
@@ -49,6 +50,26 @@ public class App {
         planetCrud.merge(planet);
 
         planetCrud.remove(planet);
+
+
+        TicketCrud ticketCrud = new TicketCrud();
+
+        Planet fromPlanet = planetCrud.getById("SAT");
+        Planet toPlanet = planetCrud.getById("VEN");
+        Client ticketClient = clientCrud.getById(5);
+
+        Ticket newTicket = new Ticket();
+        newTicket.setFromPlanet(fromPlanet);
+        newTicket.setToPlanet(toPlanet);
+        newTicket.setClient(ticketClient);
+        ticketCrud.persist(newTicket);
+
+        Ticket ticket = ticketCrud.getById(5);
+
+        ticket.setToPlanet(toPlanet);
+        ticketCrud.merge(ticket);
+
+        ticketCrud.remove(ticket);
 
         HibernateUtil.getInstance().close();
 

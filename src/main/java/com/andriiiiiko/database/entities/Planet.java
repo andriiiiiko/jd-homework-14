@@ -19,7 +19,7 @@ public class Planet {
     @Column(name = "id")
     private String id;
 
-    @Column(name = "name", length = 501)
+    @Column(name = "name", length = 501, nullable = false)
     private String name;
 
     /**

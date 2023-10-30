@@ -8,13 +8,13 @@ public class Config {
     /**
      * The JDBC URL for the database connection.
      */
-    public static final String JDBC_URL = "jdbc:mysql://52.59.26.171" +
-            ":3306/jd-homework-13";
+    public static final String JDBC_URL = "jdbc:mysql://database-goit.c082abjve5fs.eu-central-1.rds.amazonaws.com:" +
+            "3306/jd-homework-14";
 
     /**
      * The username for the database connection.
      */
-    public static final String USERNAME = "root";
+    public static final String USERNAME = "admin";
 
     /**
      * The password for the database connection.

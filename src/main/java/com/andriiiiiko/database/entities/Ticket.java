@@ -18,22 +18,23 @@ public class Ticket {
     private static final Logger LOG = LogManager.getLogger(Ticket.class);
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
-    @Column(name = "created_at", nullable = false, updatable = false)
+    @Column(name = "created_at", updatable = false)
     private Timestamp createdAt;
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "client_id")
+    @ManyToOne
+    @JoinColumn(name = "client_id", nullable = false)
     private Client client;
 
     @ManyToOne
-    @JoinColumn(name = "from_planet_id")
+    @JoinColumn(name = "from_planet_id", nullable = false)
     private Planet fromPlanet;
 
     @ManyToOne
-    @JoinColumn(name = "to_planet_id")
+    @JoinColumn(name = "to_planet_id", nullable = false)
     private Planet toPlanet;
 
     /**

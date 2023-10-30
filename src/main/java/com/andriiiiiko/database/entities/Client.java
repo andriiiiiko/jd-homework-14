@@ -16,13 +16,14 @@ public class Client {
     private static final Logger LOG = LogManager.getLogger(Client.class);
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private long id;
+    private Long id;
 
-    @Column(name = "first_name", length = 201)
+    @Column(name = "first_name", length = 201, nullable = false)
     private String firstName;
 
-    @Column(name = "last_name", length = 201)
+    @Column(name = "last_name", length = 201, nullable = false)
     private String lastName;
 
     /**
